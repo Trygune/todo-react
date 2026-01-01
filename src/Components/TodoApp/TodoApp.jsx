@@ -11,23 +11,10 @@ const TodoApp = ()=>{
     const[refresh,setrefresh]=useState(false)
 
     useEffect(()=>{
-        settask([
-            {
-                id: uuidv4(),
-                title: 'task 1',
-                status: true
-            },
-            {
-                id: uuidv4(),
-                title: 'task 2',
-                status: false
-            },
-            {
-                id: uuidv4(),
-                title: 'task 3',
-                status: false
-            },
-        ])
+        let mytasks=localStorage.getItem('Tasks')
+        if (mytasks) {
+            settask(JSON.parse(mytasks))
+        }
     },[])
 
     useEffect(()=>{
@@ -45,13 +32,15 @@ const TodoApp = ()=>{
     },[filter,task,refresh])
     
     const addtask=(tasktitle)=>{
-        settask([...task,
+        const newtasks=[...task,
             {
                 id:uuidv4(),
                 title:tasktitle,
                 status:false
             }
-        ])
+        ]
+        settask(newtasks)
+        localStorage.setItem('Tasks',JSON.stringify(newtasks))
     }
 
     const deletetask=(tasktid)=>{
@@ -59,6 +48,7 @@ const TodoApp = ()=>{
         delete newtask[newtask.findIndex(item=>item.id===tasktid)]
         newtask = newtask.filter(item=>item)
         settask(newtask)
+        localStorage.setItem('Tasks',JSON.stringify(newtask))
     }
 
     const donetask=(tasktid,taskstat)=>{
@@ -66,6 +56,7 @@ const TodoApp = ()=>{
         const tskindex=newtask.findIndex(item=>item.id===tasktid)
         newtask[tskindex].status=taskstat
         settask(newtask)
+        localStorage.setItem('Tasks',JSON.stringify(newtask))
         setrefresh(!refresh)
     }
 
