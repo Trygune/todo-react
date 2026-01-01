@@ -1,25 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import './FilterTask.css'
 
-const FilterTask = ()=>(
+const FilterTask = ({taskcount,filterstatus})=>{
+  const[filter,setfilter]=useState('all')
+  
+  const handlefilter=(filterstat)=>{
+    setfilter(filterstat)
+    filterstatus(filterstat)
+  }
+
+  return(
       <div className="filtertask">
           <div className="itemsleft">
-            2 items left
+            {taskcount} Undone
           </div>
           <div className="filter">
             <ul className="filterbtn">
               <li>
-                <button className="active">All</button>
+                <button onClick={()=>handlefilter('all')} className={filter==='all'? 'active':''}>All</button>
               </li>
               <li>
-                <button>Active</button>
+                <button onClick={()=>handlefilter('actived')} className={filter==='actived'? 'active':''}>Active</button>
               </li>
               <li>
-                <button>Completed</button>
+                <button onClick={()=>handlefilter('completed')} className={filter==='completed'? 'active':''}>Completed</button>
               </li>
             </ul>
           </div>
       </div>
-)
+  )
+}
 
 export default FilterTask

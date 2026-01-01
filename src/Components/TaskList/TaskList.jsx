@@ -2,10 +2,10 @@ import React from "react";
 import './TaskList.css'
 import {TaskItem} from "../";
 
-const TaskList = ()=>(
+const TaskList = ({tasks,deletetaskfunc,status})=>(
       <div className="tasklist">
         <ul>
-          <TaskItem/>
+          {tasks.map(thistask => <TaskItem deletefunc={deletetaskfunc} task={thistask} key={`key-${thistask.id}`} stat={status}/>)}
         </ul>
       </div>
 )
