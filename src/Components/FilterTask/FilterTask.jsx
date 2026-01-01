@@ -12,7 +12,7 @@ const FilterTask = ({taskcount,filterstatus})=>{
   return(
       <div className="filtertask">
           <div className="itemsleft">
-            {taskcount} Undone
+            {taskcount} Items
           </div>
           <div className="filter">
             <ul className="filterbtn">
