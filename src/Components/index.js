@@ -1,0 +1,6 @@
+export {default as Header} from './Header/Header'
+export {default as AddForm} from './AddForm/AddForm'
+export {default as Footer} from './Footer/Footer'
+export {default as FilterTask} from './FilterTask/FilterTask'
+export {default as TaskList} from './TaskList/TaskList'
+export {default as TodoApp} from './TodoApp/TodoApp'
