@@ -1,7 +1,8 @@
 import React from "react";
+import './AddForm.css'
 
 const AddForm=()=>(
-    <div>
+    <div className="addform">
         <form>
           <input type='text' placeholder='What do you want to do?'/>
           <button type='submit'>

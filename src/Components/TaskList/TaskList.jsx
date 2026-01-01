@@ -1,13 +1,11 @@
 import React from "react";
+import './TaskList.css'
+import {TaskItem} from "../";
 
 const TaskList = ()=>(
-      <div>
+      <div className="tasklist">
         <ul>
-          <li>
-            <input type='checkbox'/>
-            <h2>Sample</h2>
-            <button>Delete</button>
-          </li>
+          <TaskItem/>
         </ul>
       </div>
 )

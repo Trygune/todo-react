@@ -7,7 +7,7 @@ import {
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Header />
       <TodoApp/>
       <Footer/>

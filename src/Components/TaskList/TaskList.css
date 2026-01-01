@@ -1,0 +1,8 @@
+.tasklist{
+    width: 100%;
+    z-index: 2;
+}
+.tasklist ul{
+    display: flex;
+    flex-direction: column;
+}

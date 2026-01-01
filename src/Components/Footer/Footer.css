@@ -1,0 +1,9 @@
+.foot{
+    margin-top: 35px;
+    width: 100%;
+    padding: 8px;
+}
+.devname{
+    color: purple;
+    text-decoration: underline;
+}

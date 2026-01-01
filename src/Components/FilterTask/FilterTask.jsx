@@ -1,14 +1,15 @@
 import React from "react";
+import './FilterTask.css'
 
 const FilterTask = ()=>(
-      <div>
-          <div>
-            items left
+      <div className="filtertask">
+          <div className="itemsleft">
+            2 items left
           </div>
-          <div>
-            <ul>
+          <div className="filter">
+            <ul className="filterbtn">
               <li>
-                <button>All</button>
+                <button className="active">All</button>
               </li>
               <li>
                 <button>Active</button>
